@@ -6,16 +6,15 @@
 
   <groupId>es.uma.lcc.caesium</groupId>
   <artifactId>ea-test-energy</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0</version>
 
   <name>ea-test-energy</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <url>http://bio4res.lcc.uma.es</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -24,6 +23,11 @@
       <artifactId>junit</artifactId>
       <version>4.11</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>es.uma.lcc.caesium</groupId>
+      <artifactId>ea</artifactId>
+      <version>1.0</version>
     </dependency>
   </dependencies>
 
