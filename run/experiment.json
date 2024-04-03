@@ -1,5 +1,5 @@
 {
-	"numruns" : 2,
+	"numruns" : 30,
     "problem" : "rastrigin",
     "numvars" : 20,
     "range"   : 5.12,

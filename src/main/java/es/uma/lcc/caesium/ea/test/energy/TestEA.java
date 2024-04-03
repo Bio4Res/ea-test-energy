@@ -64,14 +64,6 @@ public class TestEA {
 			seed = conf.getSeed();
 		}
 		
-		if (seed < maxruns) {
-			PrintWriter seedFile = new PrintWriter("lastseed.txt");
-			seedFile.println(seed);
-			seedFile.close();
-		}
-		else {
-			f.delete();
-		}
 		
 		int numruns = conf.getNumRuns();
 		System.out.println(conf);
@@ -106,6 +98,16 @@ public class TestEA {
 		PrintWriter file = new PrintWriter(problem + "-" + numvars + "-" + seed + "-stats.json");
 		file.print(myEA.getStatistics().toJSON().toJson());
 		file.close();
+		
+		seed += numruns-1;
+		if (seed < maxruns) {
+			PrintWriter seedFile = new PrintWriter("lastseed.txt");
+			seedFile.println(seed);
+			seedFile.close();
+		}
+		else {
+			f.delete();
+		}
 	}
 	
 	
