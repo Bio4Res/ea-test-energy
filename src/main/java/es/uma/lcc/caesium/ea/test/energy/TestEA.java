@@ -82,11 +82,12 @@ public class TestEA {
 		System.out.println("-------------------------------------------------------------------------------------");
 		System.out.print("Running the EA on " + problem + "(" + numvars + ", " + range + ")");
 		if (numbits > 0) {
-			System.out.println(" binarized with " + numbits + " bits per variable");
+			System.out.print(" binarized with " + numbits + " bits per variable");
 		}
 		else {
-			System.out.println(" on a continuous domain");
+			System.out.print(" on a continuous domain" + seed);
 		}
+		System.out.println(" with seed " + conf.getSeed());
 		System.out.println("-------------------------------------------------------------------------------------");
 		
 		for (int i=0; i<numruns; i++) {
@@ -99,7 +100,7 @@ public class TestEA {
 		file.print(myEA.getStatistics().toJSON().toJson());
 		file.close();
 		
-		seed += numruns-1;
+		seed += numruns - 1;
 		if (seed < maxruns) {
 			PrintWriter seedFile = new PrintWriter("lastseed.txt");
 			seedFile.println(seed);
