@@ -20,6 +20,8 @@ import es.uma.lcc.caesium.ea.problem.continuous.Ackley;
 import es.uma.lcc.caesium.ea.problem.continuous.Griewank;
 import es.uma.lcc.caesium.ea.problem.continuous.Rastrigin;
 import es.uma.lcc.caesium.ea.problem.continuous.Rosenbrock;
+import es.uma.lcc.caesium.ea.problem.continuous.Schaffer;
+import es.uma.lcc.caesium.ea.problem.continuous.Schwefel;
 import es.uma.lcc.caesium.ea.problem.continuous.Sphere;
 import es.uma.lcc.caesium.ea.statistics.EntropyDiversity;
 import es.uma.lcc.caesium.ea.statistics.VarianceDiversity;
@@ -86,7 +88,7 @@ public class TestEA {
 			System.out.print(" binarized with " + numbits + " bits per variable");
 		}
 		else {
-			System.out.print(" on a continuous domain" + seed);
+			System.out.print(" on a continuous domain");
 		}
 		System.out.println(" with seed " + conf.getSeed());
 		System.out.println("-------------------------------------------------------------------------------------");
@@ -133,10 +135,16 @@ public class TestEA {
 			
 		case "ROSENBROCK":
 			return new Rosenbrock(numvars, range);
+
+		case "SCHAFFER":
+			return new Schaffer(numvars, range);
+			
+		case "SCHWEFEL":
+			return new Schwefel(numvars, range);	
 			
 		case "SPHERE":
 			return new Sphere(numvars, range);
-
+				
 		default:
 			return null;
 		}
