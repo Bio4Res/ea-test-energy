@@ -17,6 +17,7 @@ import es.uma.lcc.caesium.ea.config.EAConfiguration;
 import es.uma.lcc.caesium.ea.fitness.BinaryEncodedContinuousObjectiveFunction;
 import es.uma.lcc.caesium.ea.fitness.ContinuousObjectiveFunction;
 import es.uma.lcc.caesium.ea.problem.continuous.Ackley;
+import es.uma.lcc.caesium.ea.problem.continuous.Griewank;
 import es.uma.lcc.caesium.ea.problem.continuous.Rastrigin;
 import es.uma.lcc.caesium.ea.problem.continuous.Rosenbrock;
 import es.uma.lcc.caesium.ea.problem.continuous.Sphere;
@@ -124,6 +125,9 @@ public class TestEA {
 		case "ACKLEY":
 			return new Ackley(numvars, range);
 
+		case "GRIEWANK":
+			return new Griewank(numvars, range);
+			
 		case "RASTRIGIN": 
 			return new Rastrigin(numvars, range);
 			

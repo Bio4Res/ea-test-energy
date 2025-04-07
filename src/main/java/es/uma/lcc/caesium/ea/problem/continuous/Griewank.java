@@ -7,31 +7,23 @@ import es.uma.lcc.caesium.ea.fitness.OptimizationSense;
 
 
 /**
- * Ackley function
+ * Griewank function
  * @author ccottap
  * @version 1.0
  *
  */
-public class Ackley extends ContinuousObjectiveFunction {
+public class Griewank extends ContinuousObjectiveFunction {
 	/**
-	 * function constant A
+	 * function constant
 	 */
-	private static final double A = 20.0;
-	/**
-	 * function constants B
-	 */
-	private static final double B = 0.2;
-	/**
-	 * function constant C
-	 */
-	private static final double C = 2.0*Math.PI;
+	private static final double A = 1.0/4000.0;
 	
 	/**
 	 * Basic constructor
 	 * @param i the number of variables and their range
 	 * @param v range of variables ([-v, v])
 	 */
-	public Ackley(int i, double v) {
+	public Griewank(int i, double v) {
 		super(i, -v, v);
 	}
 	
@@ -48,14 +40,14 @@ public class Ackley extends ContinuousObjectiveFunction {
 	@Override
 	protected double _evaluate(Individual i) {
 		Genotype g = i.getGenome();
-		double s1 = 0.0;
-		double s2 = 0.0;
+		double s = 0.0;
+		double p = 1.0;
 		for (int j=0; j<numvars; j++) {
 			double v = (double)g.getGene(j);
-			s1 += v*v;
-			s2 += Math.cos(C*v);
+			s += v*v;
+			p *= Math.cos(v/Math.sqrt(j+1));
 		}
-		return -A*Math.exp(-B*Math.sqrt(s1/numvars)) - Math.exp(s2/numvars) + A + Math.E;
+		return 1.0 + A*s - p;
 	}
 
 
