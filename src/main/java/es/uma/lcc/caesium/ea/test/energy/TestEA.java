@@ -20,9 +20,10 @@ import es.uma.lcc.caesium.ea.problem.continuous.Ackley;
 import es.uma.lcc.caesium.ea.problem.continuous.Griewank;
 import es.uma.lcc.caesium.ea.problem.continuous.Rastrigin;
 import es.uma.lcc.caesium.ea.problem.continuous.Rosenbrock;
-import es.uma.lcc.caesium.ea.problem.continuous.Schaffer;
+import es.uma.lcc.caesium.ea.problem.continuous.Schaffer2;
 import es.uma.lcc.caesium.ea.problem.continuous.Schwefel;
 import es.uma.lcc.caesium.ea.problem.continuous.Sphere;
+import es.uma.lcc.caesium.ea.problem.continuous.XinSheYang2;
 import es.uma.lcc.caesium.ea.statistics.EntropyDiversity;
 import es.uma.lcc.caesium.ea.statistics.VarianceDiversity;
 import es.uma.lcc.caesium.ea.util.JsonUtil;
@@ -136,15 +137,18 @@ public class TestEA {
 		case "ROSENBROCK":
 			return new Rosenbrock(numvars, range);
 
-		case "SCHAFFER":
-			return new Schaffer(numvars, range);
+		case "SCHAFFER2":
+			return new Schaffer2(numvars, range);
 			
 		case "SCHWEFEL":
 			return new Schwefel(numvars, range);	
 			
 		case "SPHERE":
 			return new Sphere(numvars, range);
-				
+			
+		case "XINSHEYANG2":
+			return new XinSheYang2(numvars, range);
+			
 		default:
 			return null;
 		}
