@@ -51,13 +51,16 @@ public class Schaffer extends ContinuousObjectiveFunction {
 		Genotype g = i.getGenome();
 		double s = c;
 		double v1 = (double)g.getGene(0);
+		double v12 = v1 * v1;
 		for (int j=1; j<numvars; j++) {
 			double v2 = (double)g.getGene(j);
-			double d = v1*v1 + v2*v2;
-			double t = Math.sin(d);
-			double u = 1 + B*d;
+			double v22 = v2*v2;
+			double d1 = v12 - v22;
+			double d2 = v12 + v22;
+			double t = Math.sin(d1);
+			double u = 1 + B*d2;
 			s += (t*t-A) / (u*u);
-			v1 = v2;
+			v12 = v22;
 		}
 		return s;
 	}
