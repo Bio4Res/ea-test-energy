@@ -22,6 +22,7 @@ import es.uma.lcc.caesium.ea.problem.continuous.Rastrigin;
 import es.uma.lcc.caesium.ea.problem.continuous.Rosenbrock;
 import es.uma.lcc.caesium.ea.problem.continuous.Schaffer2;
 import es.uma.lcc.caesium.ea.problem.continuous.Schwefel;
+import es.uma.lcc.caesium.ea.problem.continuous.Solomon;
 import es.uma.lcc.caesium.ea.problem.continuous.Sphere;
 import es.uma.lcc.caesium.ea.problem.continuous.XinSheYang2;
 import es.uma.lcc.caesium.ea.statistics.EntropyDiversity;
@@ -142,6 +143,9 @@ public class TestEA {
 			
 		case "SCHWEFEL":
 			return new Schwefel(numvars, range);	
+			
+		case "SOLOMON":
+			return new Solomon(numvars, range);	
 			
 		case "SPHERE":
 			return new Sphere(numvars, range);
